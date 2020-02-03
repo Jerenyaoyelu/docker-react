@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+# Must be double quotes, otherwise produce error of ['npm not found
+CMD ["npm", "run", "start"]
